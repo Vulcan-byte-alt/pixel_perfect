@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Packed With Goodness</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #f8f9fa;
+            overflow-x: hidden;
+        }
+
+        .scroll-trigger {
+            height: 100vh;
+        }
+
+        .content_flex {
+            position: relative;
+            display: flex;
+            width: 100%;
+            height: 100%;
+            max-width: none;
+            padding-right: 16px;
+            padding-left: 16px;
+            flex-flow: column;
+            line-height: 32px;
+            margin: 0 auto;
+            padding-top: 80px;
+            padding-bottom: 80px;
+            background: #f0f0f0;
+        }
+
+        .content-inner {
+            max-width: 1080px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        ._1_sc_txt_wrp {
+            position: relative;
+            display: flex;
+            margin-left: 72px;
+            flex-flow: column;
+            margin-bottom: 64px;
+        }
+
+        ._1_icon_ttl-2 {
+            position: relative;
+            width: 40px;
+            height: 12px;
+            margin-bottom: 24px;
+            border-radius: 6px;
+            background-image: linear-gradient(90deg, rgb(99, 92, 202), rgb(140, 158, 255));
+            opacity: 0;
+            transform: translateX(-30px);
+        }
+
+        ._1_sc_title_wrp-2 {
+            position: relative;
+            max-width: 460px;
+            color: rgb(42, 38, 96);
+        }
+
+        ._1_headline {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 56px;
+            line-height: 110%;
+            font-weight: 800;
+            text-transform: capitalize;
+            opacity: 0;
+            transform: translateY(40px);
+        }
+
+        ._1_sc_btxt_wrp {
+            position: relative;
+            max-width: 460px;
+            margin-top: 8px;
+            color: rgb(112, 112, 116);
+        }
+
+        ._1_paragraph {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            line-height: 150%;
+            font-weight: 400;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .grid-container {
+            display: flex;
+            gap: 32px;
+            align-items: flex-start;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .grid-item {
+            position: relative;
+            width: 320px;
+            height: 420px;
+            border-radius: 32px;
+            opacity: 1;
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+            margin-right: 8px;
+        }
+
+        ._1_video_container {
+            position: absolute;
+            inset: -1% 0% auto -1%;
+            z-index: 0;
+            width: 351px;
+            height: 390px;
+            border-radius: 40px;
+            overflow: hidden;
+        }
+
+        ._1_video_container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 40px;
+        }
+
+        ._1_info_icon_card {
+            position: absolute;
+            top: 22px;
+            right: -6px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        ._1_info_icon {
+            width: 26px;
+            height: 26px;
+            background-color: #8c9eff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        ._1_info_icon_card:hover ._1_info_icon {
+            background-color: #635cca;
+        }
+
+        ._1_info_icon img {
+            height: 15px;
+            width: auto;
+        }
+
+        .callout {
+            position: absolute;
+            bottom: 24px;
+            left: 24px;
+            right: 24px;
+            padding: 16px;
+            z-index: 5;
+        }
+
+        ._1_icon_ttl_box {
+            position: relative;
+            width: 32px;
+            height: 12px;
+            margin-bottom: 16px;
+            border-radius: 6px;
+            background-color: rgb(255, 205, 131);
+            opacity: 0;
+            transform: translateX(-10px);
+        }
+
+        ._1_box_ttl_wrp {
+            position: relative;
+            color: rgb(42, 38, 96);
+        }
+
+        ._1_box_ttl_wrp.white {
+            color: white;
+        }
+
+        ._1_headline4_single_line {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            line-height: 100%;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .callout-subtitle {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .start-animation .animate-in {
+            animation: slideInLeft 1.5s ease forwards;
+        }
+
+        .start-animation .animate-in-delayed {
+            animation: slideInUp 1.8s ease 0.6s forwards;
+        }
+
+        .start-animation .animate-in-delayed-2 {
+            animation: slideInUp 1.8s ease 1.2s forwards;
+        }
+
+        .start-animation .animate-callout {
+            animation: slideInUp 1.5s ease 2.8s forwards;
+        }
+
+        .start-icon-animation {
+            opacity: 1;
+            transform: translateX(0);
+            transition: all 1.5s ease;
+        }
+
+        @keyframes slideInLeft {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media screen and (max-width: 991px) {
+            .content-inner {
+                max-width: 512px;
+            }
+
+            ._1_sc_txt_wrp {
+                margin-right: 32px;
+                margin-left: 32px;
+            }
+
+            ._1_headline {
+                font-size: 40px;
+            }
+
+            .grid-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            ._1_info_icon_card {
+                cursor: auto;
+            }
+        }
+
+        @media screen and (max-width: 479px) {
+            .content-inner {
+                max-width: 390px;
+                padding-right: 16px;
+                padding-left: 16px;
+            }
+
+            ._1_icon_ttl-2 {
+                background-image: linear-gradient(90deg, rgb(99, 92, 202), rgb(140, 158, 255));
+            }
+
+            .grid-item {
+                width: 280px;
+                height: 380px;
+            }
+
+            ._1_headline {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="scroll-trigger"></div>
+    <div class="content_flex">
+        <div class="content-inner">
+            <div class="_1_sc_txt_wrp">
+                <div class="_1_icon_ttl-2 animate-in"></div>
+                <div class="_1_sc_title_wrp-2">
+                    <h1 class="_1_headline animate-in-delayed">Packed With<br>Goodness</h1>
+                </div>
+                <div class="_1_sc_btxt_wrp">
+                    <p class="_1_paragraph animate-in-delayed-2">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the
+                        industry's standard dummy text ever since the 1500s.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid-container">
+                <div class="grid-item">
+                    <div class="_1_video_container">
+                        <video autoplay muted loop>
+                            <source src="video1.mp4" type="video/mp4">
+                            <source src="vid.webm" type="video/webm">
+                        </video>
+                    </div>
+                    <div class="_1_info_icon_card">
+                        <div class="_1_info_icon">
+                            <img src="i.svg" alt="Information icon">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-item">
+                    <div class="_1_video_container">
+                        <video autoplay muted loop>
+                            <source src="video2.mp4" type="video/mp4">
+                            <source src="vid.webm" type="video/webm">
+                        </video>
+                    </div>
+                    <div class="_1_info_icon_card">
+                        <div class="_1_info_icon">
+                            <img src="i.svg" alt="Information icon">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-item">
+                    <div class="_1_video_container">
+                        <video autoplay muted loop>
+                            <source src="video3.mp4" type="video/mp4">
+                            <source src="vid.webm" type="video/webm">
+                        </video>
+                    </div>
+                    <div class="_1_info_icon_card">
+                        <div class="_1_info_icon">
+                            <img src="i.svg" alt="Information icon">
+                        </div>
+                    </div>
+                    <div class="callout animate-callout" style="margin-bottom: 32px; margin-left: 7px;">
+                        <div class="_1_icon_ttl_box"></div>
+                        <div class="_1_box_ttl_wrp white">
+                            <div class="_1_headline4_single_line">PERFECT ALIGNMENT</div>
+                            <div class="callout-subtitle">5-Zoned pocket spring base</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="scroll-trigger"></div>
+
+    <script>
+        const content = document.querySelector('.content_flex');
+        const triggerElement = document.querySelector('._1_sc_txt_wrp');
+        const iconBox = document.querySelector('._1_icon_ttl_box');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    content.classList.add('start-animation');
+                }
+            });
+        }, {
+            threshold: 0,
+            rootMargin: '0px 0px 0px 0px'
+        });
+
+        const iconObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    iconBox.classList.add('start-icon-animation');
+                }
+            });
+        }, {
+            threshold: 0,
+            rootMargin: '0px 0px 0px 0px'
+        });
+
+        observer.observe(triggerElement);
+        iconObserver.observe(iconBox);
+    </script>
+
+</body>
+
+</html>
