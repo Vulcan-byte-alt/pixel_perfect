@@ -167,8 +167,9 @@
         .callout {
             position: absolute;
             bottom: 24px;
-            left: 24px;
+            left: 28px;
             right: 24px;
+            bottom: 55px;
             padding: 16px;
             z-index: 5;
         }
@@ -294,6 +295,20 @@
                 top: 16px;
                 right: 16px;
             }
+
+            .top{
+                width:305px;
+            }
+
+            .bottomm{
+                width:102%;
+                height: 102%;
+            }
+
+            .mobiles{
+                bottom:41px;
+                left:50px;
+            }
         }
 
         @media screen and (max-width: 767px) {
@@ -328,8 +343,8 @@
             ._1_video_container {
                 position: relative;
                 inset: auto;
-                width: 100%;
-                height: 100%;
+                width: 102%;
+                height: 102%;
                 border-radius: 40px;
             }
 
@@ -337,6 +352,8 @@
                 top: 12px;
                 right: 12px;
             }
+
+           
         }
 
         @media screen and (max-width: 479px) {
@@ -366,6 +383,7 @@
             .grid-item {
                 width: 180px;
                 height: 300px;
+                margin-bottom: 10px;
             }
 
             .grid-item:nth-child(3) {
@@ -377,8 +395,8 @@
             ._1_video_container {
                 position: relative;
                 inset: auto;
-                width: 100%;
-                height: 100%;
+                width: 102%;
+                height: 102%;
                 border-radius: 50px;
             }
 
@@ -390,6 +408,20 @@
                 top: 30px;
                 right: 35px;
             }
+
+            .mobile {
+                height: 250px;
+            }
+
+            .mobiles {
+                bottom: 4px;
+                left: 25px;
+            }
+
+            .bottomm{
+                height: 180px;
+            }
+           
         }
     </style>
 </head>
@@ -414,7 +446,7 @@
 
             <div class="grid-container">
                 <div class="grid-item">
-                    <div class="_1_video_container">
+                    <div class="_1_video_container top">
                         <video autoplay muted loop>
                             <source src="video1.mp4" type="video/mp4">
                             <source src="vid.webm" type="video/webm">
@@ -428,7 +460,7 @@
                 </div>
 
                 <div class="grid-item">
-                    <div class="_1_video_container">
+                    <div class="_1_video_container top">
                         <video autoplay muted loop>
                             <source src="video2.mp4" type="video/mp4">
                             <source src="vid.webm" type="video/webm">
@@ -442,7 +474,7 @@
                 </div>
 
                 <div class="grid-item">
-                    <div class="_1_video_container">
+                    <div class="_1_video_container mobile bottomm">
                         <video autoplay muted loop>
                             <source src="video3.mp4" type="video/mp4">
                             <source src="vid.webm" type="video/webm">
@@ -453,7 +485,7 @@
                             <img src="i.svg" alt="Information icon">
                         </div>
                     </div>
-                    <div class="callout animate-callout" style="margin-bottom: 32px; margin-left: 7px;">
+                    <div class="callout animate-callout mobiles">
                         <div class="_1_icon_ttl_box"></div>
                         <div class="_1_box_ttl_wrp white">
                             <div class="_1_headline4_single_line">PERFECT ALIGNMENT</div>
