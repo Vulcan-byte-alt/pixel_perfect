@@ -134,8 +134,8 @@
 
         ._1_info_icon_card {
             position: absolute;
-            top: 24px;
-            right: -4px;
+            top: 16px;
+            right: 16px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -286,11 +286,13 @@
                 inset: auto;
                 width: 100%;
                 height: 100%;
-                border-radius: 32px;
+                border-radius: 40px;
             }
 
             ._1_info_icon_card {
                 cursor: auto;
+                top: 16px;
+                right: 16px;
             }
         }
 
@@ -307,8 +309,9 @@
                 display: grid;
                 grid-template-columns: 1fr 1fr;
                 grid-template-rows: auto auto;
-                gap: 16px;
+                gap: 8px;
                 justify-items: center;
+                padding: 0 8px;
             }
 
             .grid-item {
@@ -327,7 +330,12 @@
                 inset: auto;
                 width: 100%;
                 height: 100%;
-                border-radius: 32px;
+                border-radius: 40px;
+            }
+
+            ._1_info_icon_card {
+                top: 12px;
+                right: 12px;
             }
         }
 
@@ -350,8 +358,9 @@
                 display: grid;
                 grid-template-columns: 1fr 1fr;
                 grid-template-rows: auto auto;
-                gap: 12px;
+                gap: 6px;
                 justify-items: center;
+                padding: 0 6px;
             }
 
             .grid-item {
@@ -370,11 +379,16 @@
                 inset: auto;
                 width: 100%;
                 height: 100%;
-                border-radius: 32px;
+                border-radius: 50px;
             }
 
             ._1_headline {
                 font-size: 32px;
+            }
+
+            ._1_info_icon_card {
+                top: 30px;
+                right: 35px;
             }
         }
     </style>
